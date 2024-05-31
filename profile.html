@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            height: 29.7cm; /* height of A4 paper */
+            width: 21cm; /* width of A4 paper */
+            gap: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .profiles {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            height: 29.7cm; /* height of A4 paper */
+            width: 21cm; /* width of A4 paper */
+            gap: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .profile {
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            height: 25%; /* 1/4 of the height of A4 paper */
+        }
+        .profile p {
+            line-height: 0.2; 
+            margin: 0.5em 0; 
+        }
+        .profile .profile-img {
+            width: 100%;
+            height: 10cm;
+            object-fit: cover;
+        }
+        .profile-info {
+            border : 1px solid rgba(80, 77, 77, 0.329);
+        }
+        .profile-text {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 1mm;
+            margin-right: 1mm;
+        }
+        .logo {
+            width: 100%; 
+            height: auto;
+            object-fit: cover;
+            align-self: end;
+        }
+        .forms {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; 
+            width: 21cm;
+        }
+        .forms form {
+            flex: 1 0 7cm; 
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+        #updateForm input[type="submit"]  {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bolder;
+        }
+        button {
+            padding: 10px;
+            background-color: #b6542e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <svg id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="300" height="100" viewBox="0 0 300 90" xml:space="preserve">
+            <g transform="matrix(0 0 0 0 0 0)" id="fc2d7efd-3c5b-4efe-b565-93bd3f4feb0c">
+            </g>
+            <g transform="matrix(1 0 0 1 150 45)" id="23700c87-12f1-4875-9c89-71d99d2e79c4">
+                    <rect class="logo" style="fill: none;" vector-effect="non-scaling-stroke" x="-150"
+                            y="-45" rx="0" ry="0" width="300" height="90" />
+            </g>
+            <g transform="matrix(0.65 0 0 0.65 63.63 61.77)">
+                    <text class="logo" xml:space="preserve" font-family="Lato" font-size="105"
+                            font-style="normal" font-weight="900"
+                            style="fill: rgb(223,111,5); white-space: pre;">
+                            <tspan x="-30.45" y="32.98">u</tspan>
+                    </text>
+            </g>
+            <g transform="matrix(0.65 0 0 0.65 183.54 61.39)">
+                    <text class="logo" xml:space="preserve" font-family="Lato" font-size="105"
+                            font-style="normal" font-weight="900"
+                            style="fill: rgb(79,119,233); white-space: pre;">
+                            <tspan x="-154.77" y="32.98">stesen</tspan>
+                    </text>
+            </g>
+            <g transform="matrix(0.65 0 0 0.75 32.48 58)">
+                    <text class="logo" xml:space="preserve" font-family="Lato" font-size="105"
+                            font-style="normal" font-weight="900"
+                            style="fill: rgb(79,119,233); white-space: pre;">
+                            <tspan x="-22.57" y="32.98">J</tspan>
+                    </text>
+            </g>
+            <g transform="matrix(1.03 0 0 1 64.02 38.88)">
+                    <text class="logo" xml:space="preserve" font-family="Lato" font-size="21"
+                            font-style="normal" font-weight="700"
+                            style="fill: rgb(79,119,233); white-space: pre;">
+                            <tspan x="-15.87" y="6.6">ørn</tspan>
+                    </text>
+            </g>
+    </svg>
+
+    <div class="forms">  
+        <form id="profileForm1">
+            <label for="name">Navn:</label><br>
+            <input type="text" id="name1" name="name"><br>
+            <label for="phone">Telefon:</label><br>
+            <input type="text" id="phone1" name="phone"><br>
+            <label for="email">Email:</label><br>
+            <input type="text" id="email1" name="email"><br>
+            <label for="attribute1">Ekstra info (felt 1):</label><br>
+            <input type="text" id="attribute1_1" name="attribute1"><br>
+            <label for="attribute2">Ekstra info (felt 2):</label><br>
+            <input type="text" id="attribute2_1" name="attribute2"><br>
+            <label for="image">Profil billede:</label><br>
+            <input type="file" id="image1" name="image" accept="image/*"><br>
+            
+        </form>
+        <form id="profileForm2">
+            <label for="name">Navn:</label><br>
+            <input type="text" id="name2" name="name"><br>
+            <label for="phone">Telefon:</label><br>
+            <input type="text" id="phone2" name="phone"><br>
+            <label for="email">Email:</label><br>
+            <input type="text" id="email2" name="email"><br>
+            <label for="attribute1">Ekstra info (felt 1):</label><br>
+            <input type="text" id="attribute1_2" name="attribute1"><br>
+            <label for="attribute2">Ekstra info (felt 2):</label><br>
+            <input type="text" id="attribute2_2" name="attribute2"><br>
+            <label for="image">Profil billede:</label><br>
+            <input type="file" id="image2" name="image" accept="image/*"><br>
+        </form>
+        <form id="profileForm3">
+            <label for="name">Navn:</label><br>
+            <input type="text" id="name3" name="name"><br>
+            <label for="phone">Telefon:</label><br>
+            <input type="text" id="phone3" name="phone"><br>
+            <label for="email">Email:</label><br>
+            <input type="text" id="email3" name="email"><br>
+            <label for="attribute1">Ekstra info (felt 1):</label><br>
+            <input type="text" id="attribute1_3" name="attribute1"><br>
+            <label for="attribute2">Ekstra info (felt 2):</label><br>
+            <input type="text" id="attribute2_3" name="attribute2"><br>
+            <label for="image">Profil billede:</label><br>
+            <input type="file" id="image3" name="image" accept="image/*"><br>
+        </form>
+        <form id="profileForm4">
+            <label for="name">Navn:</label><br>
+            <input type="text" id="name4" name="name"><br>
+            <label for="phone">Telefon:</label><br>
+            <input type="text" id="phone4" name="phone"><br>
+            <label for="email">Email:</label><br>
+            <input type="text" id="email4" name="email"><br>
+            <label for="attribute1">Ekstra info (felt 1):</label><br>
+            <input type="text" id="attribute1_4" name="attribute1"><br>
+            <label for="attribute2">Ekstra info (felt 2):</label><br>
+            <input type="text" id="attribute2_4" name="attribute2"><br>
+            <label for="image">Profil billede:</label><br>
+            <input type="file" id="image4" name="image" accept="image/*"><br>
+        </form>
+    </div>
+    <div class="buttons">
+        <form id="updateForm">
+            <input type="submit" value="Opdater" />
+        </form>
+        <button onclick="printDiv()">Print</button>
+    </div>
+    <div class="profiles">
+        <div class="profile" id="profile1">
+            <img class="profile-img" id="profile1image" />
+            <img class="logo" src="logo.png" alt="Logo" />
+            <div class="profile-info">
+                <div class="profile-text">
+                    <p id="profile1Name"></p>
+                    <p id="profile1Attribute1"></p>
+                </div>
+                <div class="profile-text">
+                    <p id="profile1Phone"></p>
+                    <p id="profile1Attribute2"></p>
+                </div>
+                <div class="profile-text">
+                    <p id="profile1Email"></p>
+                </div>
+            </div>
+        </div>
+        <div class="profile" id="profile2">
+            <img class="profile-img" id="profile2image" />
+            <img class="logo" src="logo.png" alt="Logo" />
+            <div class="profile-info">
+                <div class="profile-text">
+                    <p id="profile2Name"></p>
+                    <p id="profile2Attribute1"></p>
+                </div>
+                <div class="profile-text">
+                    <p id="profile2Phone"></p>
+                    <p id="profile2Attribute2"></p>
+                </div>
+                <div class="profile-text">
+                    <p id="profile2Email"></p>
+                </div>
+            </div>
+        </div>
+        <div class="profile" id="profile3">
+            <img class="profile-img" id="profile3image" />
+            <img class="logo" src="logo.png" alt="Logo" />
+            <div class="profile-info">
+                <div class="profile-text">
+                    <p id="profile3Name"></p>
+                    <p id="profile3Attribute1"></p>
+                </div>
+                <div class="profile-text">
+                    <p id="profile3Phone"></p>
+                    <p id="profile3Attribute2"></p>
+                </div>
+                <div class="profile-text">
+                    <p id="profile3Email"></p>
+                </div>
+            </div>
+        </div>
+        <div class="profile" id="profile4">
+            <img class="profile-img" id="profile4image" />
+            <img class="logo" src="logo.png" alt="Logo" />
+            <div class="profile-info">
+                <div class="profile-text">
+                    <p id="profile4Name"></p>
+                    <p id="profile4Attribute1"></p>
+                </div>
+                <div class="profile-text">
+                    <p id="profile4Phone"></p>
+                    <p id="profile4Attribute2"></p>
+                </div>
+                <div class="profile-text">
+                    <p id="profile4Email"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('updateForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            document.getElementById('profile1Name').textContent = document.getElementById('name1').value;
+            document.getElementById('profile1Attribute1').textContent = document.getElementById('attribute1_1').value;
+            document.getElementById('profile1Phone').textContent = '📞 ' + document.getElementById('phone1').value;
+            document.getElementById('profile1Attribute2').textContent = document.getElementById('attribute2_1').value;
+            document.getElementById('profile1Email').textContent = '✉️ ' + document.getElementById('email1').value;
+
+            
+
+            document.getElementById('profile2Name').textContent = document.getElementById('name2').value;
+            document.getElementById('profile2Attribute1').textContent = document.getElementById('attribute1_2').value;
+            document.getElementById('profile2Phone').textContent = '📞 ' + document.getElementById('phone2').value;
+            document.getElementById('profile2Attribute2').textContent = document.getElementById('attribute2_2').value;
+            document.getElementById('profile2Email').textContent = '✉️ ' + document.getElementById('email2').value;
+
+            document.getElementById('profile3Name').textContent = document.getElementById('name3').value;
+            document.getElementById('profile3Attribute1').textContent = document.getElementById('attribute1_3').value;
+            document.getElementById('profile3Phone').textContent = '📞 ' + document.getElementById('phone3').value;
+            document.getElementById('profile3Attribute2').textContent = document.getElementById('attribute2_3').value;
+            document.getElementById('profile3Email').textContent = '✉️ ' + document.getElementById('email3').value;
+
+            document.getElementById('profile4Name').textContent = document.getElementById('name4').value;
+            document.getElementById('profile4Attribute1').textContent = document.getElementById('attribute1_4').value;
+            document.getElementById('profile4Phone').textContent = '📞 ' + document.getElementById('phone4').value;
+            document.getElementById('profile4Attribute2').textContent = document.getElementById('attribute2_4').value;
+            document.getElementById('profile4Email').textContent = '✉️ ' + document.getElementById('email4').value;
+
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.querySelector('#profile1image').src = e.target.result;
+            }
+            reader.readAsDataURL(document.getElementById('image1').files[0]);
+
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.querySelector('#profile2image').src = e.target.result;
+            }
+            reader.readAsDataURL(document.getElementById('image2').files[0]);
+
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.querySelector('#profile3image').src = e.target.result;
+            }
+            reader.readAsDataURL(document.getElementById('image3').files[0]);
+
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.querySelector('#profile4image').src = e.target.result;
+            }
+            reader.readAsDataURL(document.getElementById('image4').files[0]);
+        });
+
+        function printDiv() {
+        var divContents = document.querySelector('.profiles').outerHTML;
+        var style = document.querySelector('style');
+        var printWindow = window.open('', '_blank');
+        printWindow.document.write('<html><head><title>Print</title>');
+        printWindow.document.write(style.outerHTML);
+        printWindow.document.write('</head><body>');
+        printWindow.document.write(divContents);
+        printWindow.document.write('</body></html>');
+        printWindow.document.close();
+        printWindow.print();
+        }
+    </script>
+</body>
+</html>
